@@ -1,93 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Deden Fahrul Roziqin</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
-    }
-    .container {
-      width: 80%;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    header {
-      text-align: center;
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      margin: 0;
-      color: #007acc;
-    }
-    header p {
-      margin: 5px 0;
-      font-style: italic;
-    }
-    section {
-      margin-bottom: 20px;
-    }
-    section h2 {
-      color: #007acc;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Deden Fahrul Roziqin</h1>
-      <p>Developer | Web & Cloud Enthusiast</p>
-      <p>Email: deden@example.com | Telp: +62 812-3456-7890</p>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CV Deden Fahrul Roziqin</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-    <section>
-      <h2>Profil</h2>
-      <p>Seorang developer yang tenang, reflektif, dan kreatif. Berpengalaman dalam pengembangan aplikasi web, sistem transaksi elektronik, serta integrasi cloud computing.</p>
-    </section>
+			:root {
+				--primary-color: #007acc;
+				--primary-dark: #005a96;
+				--bg-light: #f4f4f9;
+				--bg-card: #ffffff;
+				--text-light: #333333;
+				--border-light: #ddd;
+				--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				--shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
+			}
 
-    <section>
-      <h2>Keterampilan</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Node.js</li>
-        <li>React js</li>
-        <li>laravel</li>
-        <li>Database: MySQL, PostgreSQL</li>
-      </ul>
-    </section>
+			html.dark-mode {
+				--primary-color: #4a9eff;
+				--primary-dark: #2e7fd9;
+				--bg-light: #1a1a2e;
+				--bg-card: #16213e;
+				--text-light: #e0e0e0;
+				--border-light: #444;
+				--shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+				--shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.4);
+			}
 
-    <section>
-      <h2>Pendidikan</h2>
-      <ul>
-        <li>Sarjana Informatika – Institut Teknologi Nasional</li>
-      </ul>
-    </section>
+			body {
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				margin: 0;
+				padding: 0;
+				background: var(--bg-light);
+				color: var(--text-light);
+				transition:
+					background-color 0.3s ease,
+					color 0.3s ease;
+				line-height: 1.6;
+			}
 
-    <section>
-      <h2>Pengalaman</h2>
-      <ul>
-        <li>Developer – Proyek Sistem Transaksi Elektronik (POS & e-Contract)</li>
-        <li>Cloud Engineer – Implementasi AWS untuk aplikasi skala menengah</li>
-      </ul>
-    </section>
-  </div>
-</body>
+			.theme-toggle {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				background: var(--primary-color);
+				color: white;
+				border: none;
+				padding: 10px 15px;
+				border-radius: 8px;
+				cursor: pointer;
+				font-size: 14px;
+				font-weight: 600;
+				z-index: 1000;
+				transition: all 0.3s ease;
+				box-shadow: var(--shadow);
+			}
+
+			.theme-toggle:hover {
+				background: var(--primary-dark);
+				box-shadow: var(--shadow-hover);
+				transform: translateY(-2px);
+			}
+
+			.container {
+				width: 90%;
+				max-width: 900px;
+				margin: 60px auto 20px;
+				background: var(--bg-card);
+				padding: 40px;
+				border-radius: 12px;
+				box-shadow: var(--shadow);
+				transition: all 0.3s ease;
+			}
+
+			header {
+				text-align: center;
+				border-bottom: 3px solid var(--primary-color);
+				padding-bottom: 30px;
+				margin-bottom: 30px;
+				background: linear-gradient(
+					135deg,
+					var(--primary-color) 0%,
+					var(--primary-dark) 100%
+				);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			header h1 {
+				margin: 0 0 10px 0;
+				font-size: 2.5em;
+				font-weight: 700;
+				letter-spacing: -0.5px;
+			}
+
+			header p {
+				margin: 8px 0;
+				font-size: 1.1em;
+				color: var(--text-light);
+				-webkit-text-fill-color: unset;
+			}
+
+			header p:first-of-type {
+				font-style: italic;
+				color: var(--primary-color);
+				-webkit-text-fill-color: unset;
+			}
+
+			section {
+				margin-bottom: 35px;
+			}
+
+			section h2 {
+				color: var(--primary-color);
+				font-size: 1.5em;
+				border-bottom: 2px solid var(--primary-color);
+				padding-bottom: 10px;
+				margin-bottom: 15px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			section p {
+				color: var(--text-light);
+				margin-bottom: 10px;
+				line-height: 1.8;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			ul li {
+				margin-bottom: 12px;
+				padding-left: 25px;
+				position: relative;
+				color: var(--text-light);
+				transition: all 0.2s ease;
+			}
+
+			ul li:before {
+				content: "▸";
+				position: absolute;
+				left: 0;
+				color: var(--primary-color);
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+
+			ul li:hover {
+				padding-left: 30px;
+				color: var(--primary-color);
+			}
+
+			@media (max-width: 768px) {
+				.container {
+					margin: 70px auto 20px;
+					padding: 25px;
+				}
+
+				header h1 {
+					font-size: 2em;
+				}
+
+				section h2 {
+					font-size: 1.3em;
+				}
+
+				.theme-toggle {
+					top: 10px;
+					right: 10px;
+					padding: 8px 12px;
+					font-size: 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+
+		<div class="container">
+			<header>
+				<h1>Deden Fahrul Roziqin</h1>
+				<p>Developer | Web & Cloud Enthusiast</p>
+				<p>Email: deden@example.com | Telp: +62 812-3456-7890</p>
+			</header>
+
+			<section>
+				<h2>Profil</h2>
+				<p>
+					Seorang developer yang tenang, reflektif, dan kreatif. Berpengalaman
+					dalam pengembangan aplikasi web, sistem transaksi elektronik, serta
+					integrasi cloud computing.
+				</p>
+			</section>
+
+			<section>
+				<h2>Keterampilan</h2>
+				<ul>
+					<li>HTML, CSS, JavaScript</li>
+					<li>Node.js</li>
+					<li>React js</li>
+					<li>laravel</li>
+					<li>Database: MySQL, PostgreSQL</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Pendidikan</h2>
+				<ul>
+					<li>Sarjana Informatika – Institut Teknologi Nasional</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Pengalaman</h2>
+				<ul>
+					<li>
+						Developer – Proyek Sistem Transaksi Elektronik (POS & e-Contract)
+					</li>
+					<li>
+						Cloud Engineer – Implementasi AWS untuk aplikasi skala menengah
+					</li>
+				</ul>
+			</section>
+		</div>
+
+		<script>
+			const themeToggle = document.getElementById("themeToggle");
+			const htmlElement = document.documentElement;
+
+			// Load theme preference from localStorage
+			const savedTheme = localStorage.getItem("theme") || "light";
+			if (savedTheme === "dark") {
+				htmlElement.classList.add("dark-mode");
+				themeToggle.textContent = "☀️ Light Mode";
+			}
+
+			// Toggle theme
+			themeToggle.addEventListener("click", function () {
+				htmlElement.classList.toggle("dark-mode");
+				const isDarkMode = htmlElement.classList.contains("dark-mode");
+
+				localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+				themeToggle.textContent = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+			});
+		</script>
+	</body>
 </html>
